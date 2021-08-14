@@ -36,6 +36,6 @@ public class PricingCalculatorSmokeTest extends CommonConditions {
 
         String actualEstimatedPrice = computeEnginePage.getEstimatedPrice();
 
-        assertThat(actualEstimatedPrice, is(equalTo(computeEnginePage.getEstimatedPrice())));
+        assertThat(actualEstimatedPrice, is(equalTo(computeEngine.getPrice())));
     }
 }

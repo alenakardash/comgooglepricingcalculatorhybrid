@@ -25,7 +25,8 @@ public class YopRandomAddressGeneratorPage extends AbstractPage {
     }
 
     public String getGeneratedEmailAddress() {
-        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS).until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='egen']")));
+        new WebDriverWait(driver, WAIT_TIMEOUT_SECONDS)
+                .until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='egen']")));
         return generatedEmailAddressField.getText();
     }
 }

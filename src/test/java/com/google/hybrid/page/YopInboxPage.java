@@ -19,14 +19,13 @@ public class YopInboxPage extends AbstractPage {
     }
 
     public void refreshInboxUntilEmailWithTextReceived(String text) {
-        JavascriptExecutor executor = (JavascriptExecutor) driver;
 
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//button[@id='refresh']")));
 
         String xpath = String.format("//body[@class='bodyinbox yscrollbar']//div[contains(text(), '%s')]", text);
 
         for (int i = 0; i < 5; i++) {
-            executor.executeScript("arguments[0].click();", refreshInboxButton);
+            clickOnElement(refreshInboxButton);
 
             wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("ifinbox"));
 
